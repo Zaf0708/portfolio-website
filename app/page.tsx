@@ -11,15 +11,49 @@ import Footer from "@/components/footer/Footer";
 export default function Home() {
   return (
     <>
-      <Navbar />
-      <Hero />
-      <Expertise />
-      <Services />
-      <Projects />
-      <Tech />
-      <About />
-      <Contact />
-      <Footer />
+    <Navbar />
+
+      <div className="pt-20 flex flex-col">
+        {/* Hero */}
+        <section id="hero" className="min-h-screen">
+          <Hero />
+        </section>
+
+        {/* Expertise */}
+        <section id="expertise" className="min-h-screen">
+          <Expertise />
+        </section>
+
+        {/* Services */}
+        <section id="services" className="min-h-screen">
+          <Services />
+        </section>
+
+        {/* Projects */}
+        <section id="projects" className="min-h-screen">
+          <Projects />
+        </section>
+
+        {/* Tech */}
+        <section id="tech" className="min-h-screen">
+          <Tech />
+        </section>
+
+        {/* About */}
+        <section id="about" className="min-h-screen">
+          <About />
+        </section>
+
+        {/* Contact */}
+        <section id="contact" className="min-h-screen">
+          <Contact />
+        </section>
+
+        {/* Footer */}
+        <footer id="footer">
+          <Footer />
+        </footer>
+      </div>
     </>
   );
 }

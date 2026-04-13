@@ -5,8 +5,8 @@
 import * as React from "react";
 import Link from "next/link";
 import { Menu } from "lucide-react";
+import Image from "next/image";
 
-import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
@@ -43,11 +43,16 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
 
         {/* Logo */}
-        <Link
-          href="/"
-          className="text-xl font-bold tracking-tight text-black dark:text-white"
-        >
-          MyPortfolio
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/logo.png"
+            alt="Frontend Developer Logo"
+            width={120}
+            height={40}
+            className="h-15 w-auto object-contain"
+
+            priority
+          />
         </Link>
 
         {/* Desktop Nav */}
@@ -69,14 +74,8 @@ export default function Navbar() {
         {/* Mobile Menu */}
         <div className="md:hidden">
           <Sheet>
-            <SheetTrigger asChild>
-              <Button
-                variant="ghost"
-                size="icon"
-                aria-label="Open Menu"
-              >
-                <Menu className="h-6 w-6" />
-              </Button>
+            <SheetTrigger className="inline-flex items-center justify-center rounded-md p-2 hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+              <Menu className="h-6 w-6" />
             </SheetTrigger>
 
             <SheetContent side="right" className="w-[80%] sm:w-[350px]">
