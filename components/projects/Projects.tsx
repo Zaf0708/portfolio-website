@@ -1,3 +1,7 @@
-export default function About() {
-  return <section>Projects</section>;
+export default function Projects() {
+  return (
+    <section id="projects">
+      {/* content */}
+    </section>
+  );
 }

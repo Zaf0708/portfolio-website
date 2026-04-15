@@ -1,3 +1,7 @@
-export default function About() {
-  return <section>Services</section>;
+export default function Services() {
+  return (
+    <section id="services">
+      {/* content */}
+    </section>
+  );
 }
