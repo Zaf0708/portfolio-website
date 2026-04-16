@@ -1,3 +1,7 @@
-export default function About() {
-  return <section>Hero</section>;
+export default function Hero() {
+  return (
+    <section id="hero">
+      {/* content */}
+    </section>
+  );
 }
