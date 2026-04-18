@@ -13,7 +13,7 @@ export default function Navbar() {
 
   const navRef = useRef<HTMLDivElement>(null);
 
-  // ✅ FIX: refs inside component
+  // refs inside component
   const linkRefs = useRef<Record<string, HTMLAnchorElement | null>>({});
 
   const [underlineStyle, setUnderlineStyle] = useState({
@@ -22,7 +22,7 @@ export default function Navbar() {
     opacity: 0,
   });
 
-  // ✅ Scroll Spy
+  // Scroll Spy
   useEffect(() => {
     const sections = document.querySelectorAll("section[id]");
 
@@ -46,7 +46,7 @@ export default function Navbar() {
     };
   }, []);
 
-  // ✅ Move underline (NO querySelector)
+  // Move underline (NO querySelector)
   useEffect(() => {
     const activeEl = linkRefs.current[active];
     const parentRect = navRef.current?.getBoundingClientRect();
@@ -62,7 +62,7 @@ export default function Navbar() {
     }
   }, [active]);
 
-  // ✅ Hover override
+  // Hover override
   const handleMouseEnter = (item: string) => {
     const el = linkRefs.current[item];
     const parentRect = navRef.current?.getBoundingClientRect();
