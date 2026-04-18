@@ -80,12 +80,12 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-  --primary: #4599FE;
-  --dark: #031E49;
-  --red: #EE0405;
-  --white: #FFFDFE;
-  --text: #2D4046;
-  --border: #B8CAD1;
+  --brand-primary: #4599FE;
+  --brand-dark: #031E49;
+  --brand-red: #EE0405;
+  --brand-white: #FFFDFE;
+  --brand-text: #2D4046;
+  --brand-border: #B8CAD1;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
 }

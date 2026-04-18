@@ -13,7 +13,7 @@ export default function Home() {
     <>
     <Navbar />
 
-      <div className="pt-20 flex flex-col">
+      <div className="flex flex-col">
         {/* Hero */}
         <section id="hero" className="min-h-screen">
           <Hero />

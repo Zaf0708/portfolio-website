@@ -10,7 +10,6 @@ const links = ["Home", "Projects", "Services", "Contact"];
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
-  // Floating underline state
   const [underlineStyle, setUnderlineStyle] = useState({
     left: 0,
     width: 0,
@@ -19,7 +18,6 @@ export default function Navbar() {
 
   const navRef = useRef<HTMLDivElement>(null);
 
-  // Handle hover
   const handleMouseEnter = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const parentRect = navRef.current?.getBoundingClientRect();
@@ -41,7 +39,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="w-full bg-[#031E49] text-white sticky top-0 z-50">
+    <header className="w-full bg-[var(--brand-dark)] text-[var(--brand-white)] sticky top-0 z-50">
       <div className="max-w-[1200px] mx-auto flex items-center justify-between h-[72px] px-6 md:px-10">
 
         {/* Logo */}
@@ -59,7 +57,7 @@ export default function Navbar() {
         {/* Desktop Nav */}
         <div
           ref={navRef}
-          className="relative hidden md:flex items-center gap-8 text-[14px] text-[#B8CAD1]"
+          className="relative hidden md:flex items-center gap-8 text-[14px] text-[var(--brand-border)]"
           onMouseLeave={handleMouseLeave}
         >
           {links.map((item) => (
@@ -67,7 +65,7 @@ export default function Navbar() {
               key={item}
               href={item === "Home" ? "/" : `#${item.toLowerCase()}`}
               onMouseEnter={handleMouseEnter}
-              className="transition-colors duration-300 hover:text-white"
+              className="transition-colors duration-300 hover:text-[var(--brand-white)]"
             >
               {item}
             </Link>
@@ -75,7 +73,7 @@ export default function Navbar() {
 
           {/* Floating Underline */}
           <span
-            className="absolute bottom-0 h-[2px] bg-white transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]"
+            className="absolute bottom-0 h-[2px] bg-[var(--brand-white)] transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]"
             style={{
               left: underlineStyle.left,
               width: underlineStyle.width,
@@ -86,7 +84,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2  transition"
+          className="md:hidden p-2 text-[var(--brand-border)]"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
           aria-expanded={open}
@@ -103,13 +101,13 @@ export default function Navbar() {
           open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <nav className="px-6 pb-6 flex flex-col gap-5 text-[#B8CAD1]">
+        <nav className="px-6 pb-6 flex flex-col gap-5 text-[var(--brand-border)] bg-[var(--brand-dark)]">
           {links.map((item) => (
             <Link
               key={item}
               href={item === "Home" ? "/" : `#${item.toLowerCase()}`}
               onClick={() => setOpen(false)}
-              className="text-base transition-colors duration-300 hover:text-white"
+              className="text-base transition-colors duration-300 hover:text-[var(--brand-white)]"
             >
               {item}
             </Link>
