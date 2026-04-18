@@ -1,14 +1,20 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 
-const links = ["Home", "Projects", "Services", "Contact"];
+const links = ["home", "projects", "services", "contact"];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("home");
+
+  const navRef = useRef<HTMLDivElement>(null);
+
+  // ✅ FIX: refs inside component
+  const linkRefs = useRef<Record<string, HTMLAnchorElement | null>>({});
 
   const [underlineStyle, setUnderlineStyle] = useState({
     left: 0,
@@ -16,13 +22,54 @@ export default function Navbar() {
     opacity: 0,
   });
 
-  const navRef = useRef<HTMLDivElement>(null);
+  // ✅ Scroll Spy
+  useEffect(() => {
+    const sections = document.querySelectorAll("section[id]");
 
-  const handleMouseEnter = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.find((e) => e.isIntersecting);
+        if (visible) {
+          setActive(visible.target.id);
+        }
+      },
+      {
+        threshold: 0.6,
+        rootMargin: "-80px 0px 0px 0px",
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
+  }, []);
+
+  // ✅ Move underline (NO querySelector)
+  useEffect(() => {
+    const activeEl = linkRefs.current[active];
     const parentRect = navRef.current?.getBoundingClientRect();
 
-    if (!parentRect) return;
+    if (activeEl && parentRect) {
+      const rect = activeEl.getBoundingClientRect();
+
+      setUnderlineStyle({
+        left: rect.left - parentRect.left,
+        width: rect.width,
+        opacity: 1,
+      });
+    }
+  }, [active]);
+
+  // ✅ Hover override
+  const handleMouseEnter = (item: string) => {
+    const el = linkRefs.current[item];
+    const parentRect = navRef.current?.getBoundingClientRect();
+
+    if (!el || !parentRect) return;
+
+    const rect = el.getBoundingClientRect();
 
     setUnderlineStyle({
       left: rect.left - parentRect.left,
@@ -32,10 +79,18 @@ export default function Navbar() {
   };
 
   const handleMouseLeave = () => {
-    setUnderlineStyle((prev) => ({
-      ...prev,
-      opacity: 0,
-    }));
+    const activeEl = linkRefs.current[active];
+    const parentRect = navRef.current?.getBoundingClientRect();
+
+    if (!activeEl || !parentRect) return;
+
+    const rect = activeEl.getBoundingClientRect();
+
+    setUnderlineStyle({
+      left: rect.left - parentRect.left,
+      width: rect.width,
+      opacity: 1,
+    });
   };
 
   return (
@@ -43,7 +98,7 @@ export default function Navbar() {
       <div className="max-w-[1200px] mx-auto flex items-center justify-between h-[72px] px-6 md:px-10">
 
         {/* Logo */}
-        <Link href="/" className="flex items-center rounded">
+        <Link href="/" className="flex items-center">
           <Image
             src="/logo.png"
             alt="Homepage"
@@ -57,19 +112,30 @@ export default function Navbar() {
         {/* Desktop Nav */}
         <div
           ref={navRef}
-          className="relative hidden md:flex items-center gap-8 text-[14px] text-[var(--brand-border)]"
           onMouseLeave={handleMouseLeave}
+          className="relative hidden md:flex items-center gap-8 text-[14px] text-[var(--brand-border)]"
         >
-          {links.map((item) => (
-            <Link
-              key={item}
-              href={item === "Home" ? "/" : `#${item.toLowerCase()}`}
-              onMouseEnter={handleMouseEnter}
-              className="transition-colors duration-300 hover:text-[var(--brand-white)]"
-            >
-              {item}
-            </Link>
-          ))}
+          {links.map((item) => {
+            const isActive = active === item;
+
+            return (
+              <Link
+                key={item}
+                ref={(el) => {
+                  linkRefs.current[item] = el;
+                }}
+                href={item === "home" ? "/" : `#${item}`}
+                onMouseEnter={() => handleMouseEnter(item)}
+                className={`transition-colors duration-300 ${
+                  isActive
+                    ? "text-[var(--brand-white)]"
+                    : "hover:text-[var(--brand-white)]"
+                }`}
+              >
+                {item.charAt(0).toUpperCase() + item.slice(1)}
+              </Link>
+            );
+          })}
 
           {/* Floating Underline */}
           <span
@@ -82,13 +148,11 @@ export default function Navbar() {
           />
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Button */}
         <button
           className="md:hidden p-2 text-[var(--brand-border)]"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
-          aria-expanded={open}
-          aria-controls="mobile-menu"
         >
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -96,8 +160,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        id="mobile-menu"
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+        className={`md:hidden overflow-hidden transition-all duration-300 ${
           open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
@@ -105,11 +168,15 @@ export default function Navbar() {
           {links.map((item) => (
             <Link
               key={item}
-              href={item === "Home" ? "/" : `#${item.toLowerCase()}`}
+              href={item === "home" ? "/" : `#${item}`}
               onClick={() => setOpen(false)}
-              className="text-base transition-colors duration-300 hover:text-[var(--brand-white)]"
+              className={`text-base ${
+                active === item
+                  ? "text-[var(--brand-white)]"
+                  : "hover:text-[var(--brand-white)]"
+              }`}
             >
-              {item}
+              {item.charAt(0).toUpperCase() + item.slice(1)}
             </Link>
           ))}
         </nav>
