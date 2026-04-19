@@ -21,9 +21,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} h-full antialiased`}
+      className={`${inter.variable} antialiased`}
     >
-      <body className="bg-[var(--white)] text-[var(--text)] antialiased font-sans">
+      <body className="bg-[var(--brand-white)] text-[var(--brand-text)] antialiased font-sans">
         {children}
       </body>
     </html>
