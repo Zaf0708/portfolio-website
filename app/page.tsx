@@ -13,39 +13,39 @@ export default function Home() {
     <>
     <Navbar />
 
-      <div className="flex flex-col">
+      <div className="w-full">
         {/* Hero */}
-        <section id="hero" className="min-h-screen">
+        <section id="hero" className="w-full">
           <Hero />
         </section>
 
         {/* Expertise */}
-        <section id="expertise" className="min-h-screen">
+        <section id="expertise" className="w-full">
           <Expertise />
         </section>
 
         {/* Services */}
-        <section id="services" className="min-h-screen">
+        <section id="services" className="w-full">
           <Services />
         </section>
 
         {/* Projects */}
-        <section id="projects" className="min-h-screen">
+        <section id="projects" className="w-full">
           <Projects />
         </section>
 
         {/* Tech */}
-        <section id="tech" className="min-h-screen">
+        <section id="tech" className="w-full">
           <Tech />
         </section>
 
         {/* About */}
-        <section id="about" className="min-h-screen">
+        <section id="about" className="w-full">
           <About />
         </section>
 
         {/* Contact */}
-        <section id="contact" className="min-h-screen">
+        <section id="contact" className="w-full">
           <Contact />
         </section>
 

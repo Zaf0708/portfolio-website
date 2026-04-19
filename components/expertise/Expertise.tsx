@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 export default function Expertise() {
   return (
     <section id="expertise" className="w-full bg-[var(--brand-white)]">
-      <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-24 md:py-32">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-20 md:py-24">
 
         {/* Section Title */}
         <h2 className="text-2xl md:text-3xl font-semibold text-[var(--brand-dark)] mb-10">
@@ -15,7 +15,7 @@ export default function Expertise() {
         {/* Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
-          <Card className="border border-[var(--brand-border)] transition hover:border-[var(--brand-primary)] hover:-translate-y-1 hover:scale-[1.02] hover:shadow-md">
+        <Card className="border border-[var(--brand-border)] transition hover:bg-[rgba(69,153,254,0.1)] hover:border-[var(--brand-primary)] hover:-translate-y-1 hover:scale-[1.02] hover:shadow-md">
             <CardHeader>
               <CardTitle className="text-lg font-medium text-[var(--brand-dark)]">
                 Front-End Development
@@ -29,7 +29,7 @@ export default function Expertise() {
             </CardContent>
           </Card>
 
-          <Card className="border border-[var(--brand-border)] transition hover:border-[var(--brand-primary)] hover:-translate-y-1 hover:scale-[1.02] hover:shadow-md">
+          <Card className="border border-[var(--brand-border)] transition hover:bg-[rgba(69,153,254,0.1)] hover:border-[var(--brand-primary)] hover:-translate-y-1 hover:scale-[1.02] hover:shadow-md">
             <CardHeader>
               <CardTitle className="text-lg font-medium text-[var(--brand-dark)]">
                 API Integration
@@ -43,7 +43,7 @@ export default function Expertise() {
             </CardContent>
           </Card>
 
-          <Card className="border border-[var(--brand-border)] transition hover:border-[var(--brand-primary)] hover:-translate-y-1 hover:scale-[1.02] hover:shadow-md">
+          <Card className="border border-[var(--brand-border)] transition hover:bg-[rgba(69,153,254,0.1)] hover:border-[var(--brand-primary)] hover:-translate-y-1 hover:scale-[1.02] hover:shadow-md">
             <CardHeader>
               <CardTitle className="text-lg font-medium text-[var(--brand-dark)]">
                 Responsive UI Implementation
@@ -57,7 +57,7 @@ export default function Expertise() {
             </CardContent>
           </Card>
 
-          <Card className="border border-[var(--brand-border)] transition hover:border-[var(--brand-primary)] hover:-translate-y-1 hover:scale-[1.02] hover:shadow-md">
+          <Card className="border border-[var(--brand-border)] transition hover:bg-[rgba(69,153,254,0.1)] hover:border-[var(--brand-primary)] hover:-translate-y-1 hover:scale-[1.02] hover:shadow-md">
             <CardHeader>
               <CardTitle className="text-lg font-medium text-[var(--brand-dark)]">
                 Component Architecture
