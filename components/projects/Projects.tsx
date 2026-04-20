@@ -65,7 +65,7 @@ export default function Projects() {
               <div className="relative w-full h-[200px] rounded-lg overflow-hidden bg-gray-100">
                 <Image
                   src="/projects/auth-desktop.png"
-                  alt="Team Directory"
+                  alt="Authentication Interface"
                   fill
                   className="object-cover transition-transform duration-500 hover:scale-105"
                 />
@@ -111,8 +111,8 @@ export default function Projects() {
             <div className="p-4">
               <div className="relative w-full h-[200px] rounded-lg overflow-hidden bg-gray-100">
                 <Image
-                  src="/projects/team-desktop.png"
-                  alt="Team Directory"
+                  src="/projects/virtual-desktop.png"
+                  alt="Virtual Tour"
                   fill
                   className="object-cover transition-transform duration-500 hover:scale-105"
                 />
@@ -158,8 +158,8 @@ export default function Projects() {
             <div className="p-4">
               <div className="relative w-full h-[200px] rounded-lg overflow-hidden bg-gray-100">
                 <Image
-                  src="/projects/team-desktop.png"
-                  alt="Team Directory"
+                  src="/projects/sponsors-desktop.png"
+                  alt="Sponsors Showcase"
                   fill
                   className="object-cover transition-transform duration-500 hover:scale-105"
                 />
@@ -205,8 +205,8 @@ export default function Projects() {
             <div className="p-4">
               <div className="relative w-full h-[200px] rounded-lg overflow-hidden bg-gray-100">
                 <Image
-                  src="/projects/team-desktop.png"
-                  alt="Team Directory"
+                  src="/projects/courses-desktop.png"
+                  alt="Courses Interface"
                   fill
                   className="object-cover transition-transform duration-500 hover:scale-105"
                 />
