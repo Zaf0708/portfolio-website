@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function Services() {
   return (
-    <section id="services" className="w-full bg-[var(--brand-white)]">
+    <section id="services" className="w-full bg-[rgba(69,153,254,0.05)]">
       <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-20 md:py-24">
 
         <h2 className="text-2xl md:text-3xl font-semibold text-[var(--brand-dark)] mb-10">

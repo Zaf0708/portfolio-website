@@ -13,39 +13,39 @@ export default function Home() {
     <>
     <Navbar />
 
-      <div className="w-full">
+      <div className="w-full h-auto">
         {/* Hero */}
-        <section id="hero" className="w-full">
+        <section id="hero" className="w-full h-auto">
           <Hero />
         </section>
 
         {/* Expertise */}
-        <section id="expertise" className="w-full">
+        <section id="expertise" className="w-full h-auto">
           <Expertise />
         </section>
 
         {/* Services */}
-        <section id="services" className="w-full">
+        <section id="services" className="w-full h-auto">
           <Services />
         </section>
 
         {/* Projects */}
-        <section id="projects" className="w-full">
+        <section id="projects" className="w-full h-auto">
           <Projects />
         </section>
 
         {/* Tech */}
-        <section id="tech" className="w-full">
+        <section id="tech" className="w-full h-auto">
           <Tech />
         </section>
 
         {/* About */}
-        <section id="about" className="w-full">
+        <section id="about" className="w-full h-auto">
           <About />
         </section>
 
         {/* Contact */}
-        <section id="contact" className="w-full">
+        <section id="contact" className="w-full h-auto">
           <Contact />
         </section>
 
