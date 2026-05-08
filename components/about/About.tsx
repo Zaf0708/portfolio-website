@@ -98,10 +98,11 @@ export default function About() {
                 px-6 py-3
                 text-sm font-medium
                 rounded-md
+
                 transition-all duration-300
 
-                hover:bg-[#2F7FE0]  /* updated hover */
-                hover:shadow-[0_4px_4px_rgba(0,0,0,0.1)] /* consistent design system */
+                hover:bg-[#2F7FE0]
+                hover:shadow-[0_4px_4px_rgba(0,0,0,0.1)]
               "
             >
               <a href="#contact">Get In Touch</a>
