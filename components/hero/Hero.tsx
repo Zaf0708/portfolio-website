@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Button } from "@/components/ui/button"; 
 
 export default function Hero() {
   return (
@@ -26,20 +27,46 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
 
               {/* Primary Button */}
-              <a
-                href="#projects"
-                className="px-6 py-3 text-sm font-medium rounded-md bg-[var(--brand-primary)] text-[var(--brand-white)] transition-all duration-300 hover:bg-[#2F7FE0] hover:shadow-[0_4px_4px_rgba(0,0,0,0.1)]"
+              <Button
+                asChild
+                className="
+                  bg-[var(--brand-primary)]
+                  text-[var(--brand-white)]
+                  px-6 py-3
+                  text-sm font-medium
+                  rounded-md
+                  transition-all duration-300
+
+                  hover:bg-[#2F7FE0]
+                  hover:shadow-[0_4px_4px_rgba(0,0,0,0.1)]
+                "
               >
-                View Projects
-              </a>
+                <a href="#projects">View Projects</a>
+              </Button>
 
               {/* Secondary Button */}
-              <a
-                href="#contact"
-                className="px-6 py-3 text-sm font-medium rounded-[8px] border border-[var(--brand-border)] text-[var(--brand-white)] transition-all duration-300 hover:text-[var(--brand-primary)] hover:border-[var(--brand-primary)] hover:shadow-[0_4px_4px_rgba(0,0,0,0.1)]"
+              <Button
+                asChild
+                variant="outline"
+                className="
+                  px-6 py-3
+                  text-sm font-medium
+                  rounded-[8px]
+
+                  border border-[var(--brand-border)]
+                  bg-transparent
+                  text-[var(--brand-white)]
+
+                  transition-all duration-300
+
+                  hover:bg-transparent
+                  hover:text-[var(--brand-primary)]
+                  hover:border-[var(--brand-primary)]
+                  hover:shadow-[0_4px_4px_rgba(0,0,0,0.1)]
+                "
               >
-                Contact Me
-              </a>
+                <a href="#contact">Contact Me</a>
+              </Button>
 
             </div>
           </div>
