@@ -76,7 +76,7 @@ export default function Contact() {
                   </p>
 
                   <a
-                    href="https://github.com"
+                    href="https://github.com/Zaf0708"
                     target="_blank"
                     className="text-sm md:text-base text-[var(--brand-primary)] break-all hover:underline"
                   >
