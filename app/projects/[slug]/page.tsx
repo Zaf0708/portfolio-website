@@ -3,13 +3,15 @@ import Image from "next/image";
 
 import { projects } from "@/app/data/projects";
 
-export default function CaseStudyPage({
+export default async function CaseStudyPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
+  const { slug } = await params;
+
   const project = projects.find(
-    (item) => item.slug === params.slug
+    (item) => item.slug === slug
   );
 
   if (!project) {
