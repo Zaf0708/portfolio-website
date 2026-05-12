@@ -1,4 +1,3 @@
-
 export const projects = [
   {
     slug: "team-directory-api",
@@ -9,16 +8,29 @@ export const projects = [
       "API-driven team directory with dynamic routing and real-time data rendering.",
 
     overview:
-      "A scalable team directory application built with React and Next.js, focused on dynamic routing, reusable component architecture, and API-driven content rendering.",
+      "A scalable team directory platform built using React and Next.js with reusable component systems, API-driven rendering, and responsive layout architecture.",
+
+    problem:
+      "The application required a scalable solution for rendering dynamic team member profiles while maintaining clean routing structure, responsive layouts, and reusable components.",
+
+    solution:
+      "Implemented dynamic route generation, reusable profile components, and structured API rendering to improve scalability, maintainability, and navigation flow.",
+
+    features: [
+      "Dynamic team member routing",
+      "API-driven content rendering",
+      "Reusable component architecture",
+      "Responsive profile layouts",
+    ],
 
     outcome:
-      "Improved content organization and scalable team member rendering using dynamic routes and reusable UI systems.",
+      "Improved content organization and scalable rendering through reusable UI systems and dynamic route handling.",
 
     performance:
-      "Optimized rendering and responsive layout behavior across desktop, tablet, and mobile devices.",
+      "Optimized rendering performance and responsive layout behavior across desktop, tablet, and mobile devices.",
 
     usability:
-      "Clear navigation flow and structured profile presentation improved user accessibility and browsing experience.",
+      "Enhanced user navigation and browsing experience through clear profile structure and responsive presentation.",
 
     tech: [
       "React",
@@ -28,171 +40,62 @@ export const projects = [
       "Responsive UI",
     ],
 
-    heroImage: "/projects/team-directory/hero.png",
+    heroImage: "/projects/team-directory/team-hero.png",
 
     gallery: [
       "/projects/team-directory/team-desktop.png",
       "/projects/team-directory/team-tablet.png",
       "/projects/team-directory/team-mobile.png",
-      "/projects/team-directory/team-section-layout.png",
-      "/projects/team-directory/team-section.png",
     ],
   },
 
   {
     slug: "authentication-interface",
 
-    title: "Authentication Login Interface with API",
+    title: "Authentication Login Interface",
 
     shortDescription:
-      "Secure login interface with API validation and clean authentication flow.",
+      "Secure login experience with validation handling and responsive authentication flow.",
 
     overview:
-      "Authentication interface focused on validation handling, user experience, responsive design, and structured authentication flow implementation.",
+      "A modern authentication interface focused on validation feedback, structured form handling, API interaction, and responsive UI behavior.",
+
+    problem:
+      "The project required a clean authentication experience with clear validation handling and responsive layout consistency across multiple devices.",
+
+    solution:
+      "Developed a responsive authentication system with structured validation states, API integration, and accessible form interaction patterns.",
+
+    features: [
+      "Authentication form validation",
+      "Responsive form layouts",
+      "Structured error feedback",
+      "API integration workflow",
+    ],
 
     outcome:
-      "Delivered a clean and structured authentication experience with improved validation feedback and interface clarity.",
+      "Delivered a clean and structured authentication experience with improved validation clarity and interface consistency.",
 
     performance:
-      "Optimized form rendering and responsive interaction handling across multiple devices.",
+      "Optimized rendering and responsive interaction behavior for desktop, tablet, and mobile environments.",
 
     usability:
-      "Improved accessibility and user guidance through clear input structure and validation states.",
+      "Improved user accessibility and login guidance through clear validation messaging and form structure.",
 
     tech: [
       "React",
       "Next.js",
+      "TypeScript",
       "Authentication",
       "API Integration",
-      "Responsive UI",
     ],
 
-    heroImage: "/projects/authentication/hero.png",
+    heroImage: "/projects/authentication/auth-hero.png",
 
     gallery: [
       "/projects/authentication/auth-desktop.png",
       "/projects/authentication/auth-tablet.png",
       "/projects/authentication/auth-mobile.png",
-      "/projects/authentication/auth-error.png",
-      "/projects/authentication/auth-validation.png",
-      "/projects/authentication/auth-required-field.png"
-    ],
-  },
-
-  {
-    slug: "interactive-virtual-tour",
-
-    title: "Interactive Virtual Tour Interface",
-
-    shortDescription:
-      "Interactive virtual experience with smooth navigation and structured UI flow.",
-
-    overview:
-      "A responsive virtual tour interface designed to improve user engagement through interactive navigation and immersive layout presentation.",
-
-    outcome:
-      "Enhanced user interaction and navigation clarity through structured visual flow and responsive interface design.",
-
-    performance:
-      "Optimized visual rendering and interaction behavior across desktop and mobile environments.",
-
-    usability:
-      "Improved user exploration experience with intuitive layout structure and clear navigation patterns.",
-
-    tech: [
-      "React",
-      "Next.js",
-      "Interactive UI",
-      "Responsive Design",
-      "UI/UX",
-    ],
-
-    heroImage: "/projects/virtual-tour/hero.png",
-
-    gallery: [
-      "/projects/virtual-tour/tour-desktop.png",
-      "/projects/virtual-tour/tour-tablet.png",
-      "/projects/virtual-tour/tour-mobile.png",
-      "/projects/virtual-tour/tour-content.png",
-      "/projects/virtual-tour/tour-interaction.png",
-    ],
-  },
-
-  {
-    slug: "sponsors-showcase",
-
-    title: "Responsive Sponsors Showcase Page",
-
-    shortDescription:
-      "Responsive sponsors showcase with structured grid layout and adaptive spacing.",
-
-    overview:
-      "Sponsors showcase interface designed with responsive grid systems and alignment consistency across different screen sizes.",
-
-    outcome:
-      "Created a scalable sponsor presentation system with improved responsiveness and visual consistency.",
-
-    performance:
-      "Optimized grid responsiveness and spacing behavior for multiple breakpoints.",
-
-    usability:
-      "Improved sponsor visibility and layout clarity through balanced alignment and responsive card structure.",
-
-    tech: [
-      "React",
-      "Responsive Layout",
-      "Grid System",
-      "UI Development",
-      "Tailwind CSS",
-    ],
-
-    heroImage: "/projects/sponsors-showcase/hero.png",
-
-    gallery: [
-      "/projects/sponsors-showcase/desktop-full.png",
-      "/projects/sponsors-showcase/tablet.png",
-      "/projects/sponsors-showcase/mobile.png",
-      "/projects/sponsors-showcase/grid-layout.png",
-      "/projects/sponsors-showcase/card-alignment.png",
-    ],
-  },
-
-  {
-    slug: "courses-interface",
-
-    title: "Courses Interface with Tag Positioning",
-
-    shortDescription:
-      "Dynamic course interface with adaptive tag positioning and responsive card layout.",
-
-    overview:
-      "Courses interface focused on responsive content presentation, adaptive tag positioning, and scalable card-based UI structure.",
-
-    outcome:
-      "Improved course content organization and responsive card consistency across different layouts.",
-
-    performance:
-      "Optimized responsive rendering and adaptive spacing behavior for dynamic course cards.",
-
-    usability:
-      "Enhanced readability and user interaction through structured tag placement and balanced layout presentation.",
-
-    tech: [
-      "React",
-      "Responsive UI",
-      "Dynamic Layout",
-      "Card System",
-      "Tailwind CSS",
-    ],
-
-    heroImage: "/projects/courses-interface/hero.png",
-
-    gallery: [
-      "/projects/courses-interface/courses-desktop.png",
-      "/projects/courses-interface/courses-tablet.png",
-      "/projects/courses-interface/courses-mobile.png",
-      "/projects/courses-interface/courses-tag-positioning-detail.png",
-      "/projects/courses-interface/course-card-detail.png",
     ],
   },
 ];
