@@ -46,11 +46,36 @@ export const projects = [
     heroImage: "/projects/team-directory/team-hero.png",
 
     gallery: [
-      "/projects/team-directory/team-desktop.png",
-      "/projects/team-directory/team-tablet.png",
-      "/projects/team-directory/team-mobile.png",
-      "/projects/team-directory/team-section-layout.png",
-      "/projects/team-directory/team-section.png",
+      {
+        image: "/projects/team-directory/team-desktop.png",
+        title: "Desktop Team Directory Layout",
+        description:
+          "Responsive desktop interface with dynamic team member rendering and structured content layout.",
+      },
+      {
+        image: "/projects/team-directory/team-tablet.png",
+        title: "Tablet Responsive View",
+        description:
+          "Adaptive tablet layout optimized for balanced spacing and responsive navigation.",
+      },
+      {
+        image: "/projects/team-directory/team-mobile.png",
+        title: "Mobile Team Interface",
+        description:
+          "Mobile-first responsive experience with optimized content flow and usability.",
+      },
+      {
+        image: "/projects/team-directory/team-section-layout.png",
+        title: "Section Layout Structure",
+        description:
+          "Reusable section-based layout system designed for scalability and visual consistency.",
+      },
+      {
+        image: "/projects/team-directory/team-section.png",
+        title: "Profile Section Design",
+        description:
+          "Structured team profile presentation with clean typography and content hierarchy.",
+      },
     ],
   },
 
@@ -101,12 +126,42 @@ export const projects = [
     heroImage: "/projects/authentication/auth-hero.png",
 
     gallery: [
-      "/projects/authentication/auth-desktop.png",
-      "/projects/authentication/auth-tablet.png",
-      "/projects/authentication/auth-mobile.png",
-      "/projects/authentication/auth-error.png",
-      "/projects/authentication/auth-validation.png",
-      "/projects/authentication/auth-required-field.png",
+      {
+        image: "/projects/authentication/auth-desktop.png",
+        title: "Desktop Authentication Layout",
+        description:
+          "Clean desktop authentication interface with structured form hierarchy and validation flow.",
+      },
+      {
+        image: "/projects/authentication/auth-tablet.png",
+        title: "Tablet Authentication View",
+        description:
+          "Responsive tablet layout maintaining balanced spacing and accessible form interaction.",
+      },
+      {
+        image: "/projects/authentication/auth-mobile.png",
+        title: "Mobile Login Experience",
+        description:
+          "Mobile-responsive authentication interface optimized for accessibility and usability.",
+      },
+      {
+        image: "/projects/authentication/auth-error.png",
+        title: "Error State Handling",
+        description:
+          "Structured error feedback system designed to improve clarity and user guidance.",
+      },
+      {
+        image: "/projects/authentication/auth-validation.png",
+        title: "Validation Workflow",
+        description:
+          "Form validation handling with responsive feedback and structured interaction states.",
+      },
+      {
+        image: "/projects/authentication/auth-required-field.png",
+        title: "Required Field Indicators",
+        description:
+          "Accessible required-field system improving form usability and interaction clarity.",
+      },
     ],
   },
 
@@ -157,11 +212,36 @@ export const projects = [
     heroImage: "/projects/virtual-tour/virtual-hero.png",
 
     gallery: [
-      "/projects/virtual-tour/tour-desktop.png",
-      "/projects/virtual-tour/tour-tablet.png",
-      "/projects/virtual-tour/tour-mobile.png",
-      "/projects/virtual-tour/tour-content.png",
-      "/projects/virtual-tour/tour-interaction.png",
+      {
+        image: "/projects/virtual-tour/tour-desktop.png",
+        title: "Desktop Virtual Experience",
+        description:
+          "Immersive desktop layout with structured navigation and responsive interaction flow.",
+      },
+      {
+        image: "/projects/virtual-tour/tour-tablet.png",
+        title: "Tablet Tour Interface",
+        description:
+          "Responsive tablet experience optimized for smooth navigation and visual balance.",
+      },
+      {
+        image: "/projects/virtual-tour/tour-mobile.png",
+        title: "Mobile Virtual Tour",
+        description:
+          "Mobile-first interface focused on responsive interaction and usability.",
+      },
+      {
+        image: "/projects/virtual-tour/tour-content.png",
+        title: "Content Presentation Layout",
+        description:
+          "Structured content hierarchy designed for immersive exploration and readability.",
+      },
+      {
+        image: "/projects/virtual-tour/tour-interaction.png",
+        title: "Interactive Navigation System",
+        description:
+          "Interactive UI flow supporting intuitive user movement and responsive transitions.",
+      },
     ],
   },
 
@@ -212,11 +292,36 @@ export const projects = [
     heroImage: "/projects/sponsors-showcase/sponsors-hero.png",
 
     gallery: [
-      "/projects/sponsors-showcase/sponsors-desktop.png",
-      "/projects/sponsors-showcase/sponsors-tablet.png",
-      "/projects/sponsors-showcase/sponsors-mobile.png",
-      "/projects/sponsors-showcase/sponsors-grid-layout.png",
-      "/projects/sponsors-showcase/sponsors-card-alignment.png",
+      {
+        image: "/projects/sponsors-showcase/sponsors-desktop.png",
+        title: "Desktop Sponsors Layout",
+        description:
+          "Responsive desktop sponsor showcase with structured grid alignment and spacing.",
+      },
+      {
+        image: "/projects/sponsors-showcase/sponsors-tablet.png",
+        title: "Tablet Sponsors View",
+        description:
+          "Adaptive tablet grid system maintaining responsive spacing consistency.",
+      },
+      {
+        image: "/projects/sponsors-showcase/sponsors-mobile.png",
+        title: "Mobile Sponsors Experience",
+        description:
+          "Mobile-responsive sponsor presentation optimized for readability and hierarchy.",
+      },
+      {
+        image: "/projects/sponsors-showcase/sponsors-grid-layout.png",
+        title: "Responsive Grid Structure",
+        description:
+          "Scalable sponsor grid system designed for flexible responsive layouts.",
+      },
+      {
+        image: "/projects/sponsors-showcase/sponsors-card-alignment.png",
+        title: "Card Alignment System",
+        description:
+          "Structured card alignment improving visual balance and responsive consistency.",
+      },
     ],
   },
 
@@ -267,11 +372,36 @@ export const projects = [
     heroImage: "/projects/courses-interface/courses-hero.png",
 
     gallery: [
-      "/projects/courses-interface/courses-desktop.png",
-      "/projects/courses-interface/courses-tablet.png",
-      "/projects/courses-interface/courses-mobile.png",
-      "/projects/courses-interface/courses-tags-positioning.png",
-      "/projects/courses-interface/courses-card-detail.png",
+      {
+        image: "/projects/courses-interface/courses-desktop.png",
+        title: "Desktop Courses Interface",
+        description:
+          "Responsive desktop course layout with scalable card-based presentation.",
+      },
+      {
+        image: "/projects/courses-interface/courses-tablet.png",
+        title: "Tablet Courses View",
+        description:
+          "Adaptive tablet interface optimized for balanced spacing and readability.",
+      },
+      {
+        image: "/projects/courses-interface/courses-mobile.png",
+        title: "Mobile Courses Experience",
+        description:
+          "Mobile-responsive layout focused on usability and structured content flow.",
+      },
+      {
+        image: "/projects/courses-interface/courses-tags-positioning.png",
+        title: "Adaptive Tag Positioning",
+        description:
+          "Dynamic tag placement system designed for scalable responsive layouts.",
+      },
+      {
+        image: "/projects/courses-interface/courses-card-detail.png",
+        title: "Course Card Structure",
+        description:
+          "Reusable course card system with structured hierarchy and responsive spacing.",
+      },
     ],
   },
 ];

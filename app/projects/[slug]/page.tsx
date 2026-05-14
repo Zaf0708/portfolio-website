@@ -66,7 +66,7 @@ export default async function CaseStudyPage({
               alt={project.title}
               fill
               priority
-              className="object-cover"
+              className="object-cover object-top"
             />
 
           </div>
@@ -155,17 +155,35 @@ export default async function CaseStudyPage({
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
 
-            {project.gallery.map((image, index) => (
+            {project.gallery.map((item, index) => (
               <div
                 key={index}
-                className="relative w-full h-[220px] sm:h-[260px] md:h-[320px] lg:h-[360px] rounded-xl overflow-hidden border border-[var(--brand-border)] bg-white"
+                className="border border-[var(--brand-border)] rounded-xl overflow-hidden bg-white transition-all duration-300 hover:shadow-md"
               >
-                <Image
-                  src={image}
-                  alt={`${project.title} preview ${index + 1}`}
-                  fill
-                  className="object-cover transition-transform duration-500 hover:scale-105"
-                />
+
+                {/* Image */}
+                <div className="relative w-full h-[220px] sm:h-[260px] md:h-[320px] lg:h-[360px] overflow-hidden">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover object-top transition-transform duration-500 hover:scale-105"
+                  />
+                </div>
+
+                {/* Content */}
+                <div className="p-4 md:p-5">
+
+                  <h3 className="text-base md:text-lg font-semibold text-[var(--brand-dark)] mb-2">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-sm md:text-base text-[var(--brand-text)] leading-relaxed">
+                    {item.description}
+                  </p>
+
+                </div>
+
               </div>
             ))}
 
