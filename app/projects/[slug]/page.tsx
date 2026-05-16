@@ -265,7 +265,7 @@ export default async function CaseStudyPage({
       <section className="w-full border-t border-[var(--brand-border)]">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-10 py-10">
 
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
 
             <div className="w-full sm:w-auto">
               {previousProject && (

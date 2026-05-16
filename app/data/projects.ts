@@ -2,7 +2,7 @@ export const projects = [
   {
     slug: "team-directory-api",
 
-    cardImage: "/projects/team-directory/team-desktop.png",
+    cardImage: "/projects/team-directory/team-hero.png",
 
     title: "Team Directory API Web Application",
 
@@ -85,7 +85,7 @@ export const projects = [
   {
     slug: "authentication-interface",
 
-    cardImage: "/projects/authentication/auth-desktop.png",
+    cardImage: "/projects/authentication/auth-hero.png",
 
     title: "Authentication Login Interface",
 
@@ -168,7 +168,7 @@ export const projects = [
   {
     slug: "interactive-virtual-tour",
 
-    cardImage: "/projects/virtual-tour/tour-desktop.png",
+    cardImage: "/projects/virtual-tour/tour-hero.png",
 
     title: "Interactive Virtual Tour Experience",
 
@@ -244,7 +244,7 @@ export const projects = [
   {
     slug: "sponsors-showcase",
 
-    cardImage: "/projects/sponsors-showcase/sponsors-desktop.png",
+    cardImage: "/projects/sponsors-showcase/sponsors-hero.png",
 
     title: "Responsive Sponsors Showcase",
 
@@ -321,7 +321,7 @@ export const projects = [
   {
     slug: "courses-interface",
 
-    cardImage: "/projects/courses-interface/courses-desktop.png",
+    cardImage: "/projects/courses-interface/courses-hero.png",
 
     title: "Courses Interface with Dynamic Layout",
 
