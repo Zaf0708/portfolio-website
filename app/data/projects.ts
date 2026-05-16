@@ -2,6 +2,8 @@ export const projects = [
   {
     slug: "team-directory-api",
 
+    cardImage: "/projects/team-directory/team-desktop.png",
+
     title: "Team Directory API Web Application",
 
     shortDescription:
@@ -76,25 +78,25 @@ export const projects = [
         description:
           "Structured team profile presentation with clean typography and content hierarchy.",
       },
+
     ],
   },
 
   {
     slug: "authentication-interface",
 
+    cardImage: "/projects/authentication/auth-desktop.png",
+
     title: "Authentication Login Interface",
 
     shortDescription:
       "Responsive authentication experience with validation handling, API integration, and structured user interaction flow.",
 
-    overview:
-      "A modern authentication interface designed with responsive layouts, structured validation handling, and API-driven authentication workflows. The project focuses on accessibility, clean interaction flow, and user-friendly error handling.",
+    overview: "A modern authentication interface designed with responsive layouts, structured validation handling, and API-driven authentication workflows. The project focuses on accessibility, clean interaction flow, and user-friendly error handling.",
 
-    problem:
-      "The interface required secure validation handling and a clear authentication flow while maintaining responsive layout consistency and accessible user interaction patterns.",
+    problem: "The interface required secure validation handling and a clear authentication flow while maintaining responsive layout consistency and accessible user interaction patterns.",
 
-    solution:
-      "Developed a responsive authentication system with structured validation states, API integration, reusable form components, and accessible feedback handling for improved user experience.",
+    solution: "Developed a responsive authentication system with structured validation states, API integration, reusable form components, and accessible feedback handling for improved user experience.",
 
     features: [
       "Authentication validation system",
@@ -105,14 +107,11 @@ export const projects = [
       "Reusable input components",
     ],
 
-    outcome:
-      "Delivered a clean authentication experience with improved validation clarity and structured interaction flow.",
+    outcome: "Delivered a clean authentication experience with improved validation clarity and structured interaction flow.",
 
-    performance:
-      "Optimized rendering behavior and responsive interaction handling across multiple devices.",
+    performance: "Optimized rendering behavior and responsive interaction handling across multiple devices.",
 
-    usability:
-      "Improved accessibility and user guidance through clear validation messaging and structured form layouts.",
+    usability: "Improved accessibility and user guidance through clear validation messaging and structured form layouts.",
 
     tech: [
       "React",
@@ -162,25 +161,25 @@ export const projects = [
         description:
           "Accessible required-field system improving form usability and interaction clarity.",
       },
+
     ],
   },
 
   {
     slug: "interactive-virtual-tour",
 
+    cardImage: "/projects/virtual-tour/tour-desktop.png",
+
     title: "Interactive Virtual Tour Experience",
 
     shortDescription:
       "Interactive virtual experience with immersive layouts, responsive navigation, and structured UI flow.",
 
-    overview:
-      "An interactive virtual tour interface focused on user engagement through immersive layouts, smooth interaction flow, and responsive visual presentation. The project emphasizes scalable UI systems and structured content navigation.",
+    overview: "An interactive virtual tour interface focused on user engagement through immersive layouts, smooth interaction flow, and responsive visual presentation. The project emphasizes scalable UI systems and structured content navigation.",
 
-    problem:
-      "The project required an engaging and responsive interface capable of maintaining smooth interaction flow and immersive user experience across multiple screen sizes.",
+    problem: "The project required an engaging and responsive interface capable of maintaining smooth interaction flow and immersive user experience across multiple screen sizes.",
 
-    solution:
-      "Implemented responsive layouts, structured navigation systems, and interactive UI patterns to create a scalable and engaging virtual experience.",
+    solution: "Implemented responsive layouts, structured navigation systems, and interactive UI patterns to create a scalable and engaging virtual experience.",
 
     features: [
       "Interactive UI experience",
@@ -191,14 +190,11 @@ export const projects = [
       "Reusable content architecture",
     ],
 
-    outcome:
-      "Improved user engagement and navigation clarity through responsive interaction systems and immersive layout presentation.",
+    outcome: "Improved user engagement and navigation clarity through responsive interaction systems and immersive layout presentation.",
 
-    performance:
-      "Optimized rendering behavior and interaction responsiveness across desktop, tablet, and mobile devices.",
+    performance: "Optimized rendering behavior and interaction responsiveness across desktop, tablet, and mobile devices.",
 
-    usability:
-      "Enhanced exploration experience through intuitive layouts and structured navigation flow.",
+    usability: "Enhanced exploration experience through intuitive layouts and structured navigation flow.",
 
     tech: [
       "React",
@@ -248,19 +244,18 @@ export const projects = [
   {
     slug: "sponsors-showcase",
 
+    cardImage: "/projects/sponsors-showcase/sponsors-desktop.png",
+
     title: "Responsive Sponsors Showcase",
 
     shortDescription:
       "Responsive sponsors showcase with adaptive grid layouts, scalable spacing, and structured visual hierarchy.",
 
-    overview:
-      "A sponsors showcase interface designed with responsive grid systems, adaptive spacing behavior, and reusable layout patterns. The project focuses on scalable content presentation and alignment consistency across devices.",
+    overview: "A sponsors showcase interface designed with responsive grid systems, adaptive spacing behavior, and reusable layout patterns. The project focuses on scalable content presentation and alignment consistency across devices.",
 
-    problem:
-      "The interface required a scalable sponsor presentation layout capable of maintaining alignment consistency and responsive behavior across multiple breakpoints.",
+    problem: "The interface required a scalable sponsor presentation layout capable of maintaining alignment consistency and responsive behavior across multiple breakpoints.",
 
-    solution:
-      "Developed adaptive grid systems and reusable card-based layouts with structured spacing logic to improve scalability and visual consistency.",
+    solution: "Developed adaptive grid systems and reusable card-based layouts with structured spacing logic to improve scalability and visual consistency.",
 
     features: [
       "Responsive sponsor grid system",
@@ -271,14 +266,11 @@ export const projects = [
       "Scalable presentation system",
     ],
 
-    outcome:
-      "Improved sponsor visibility and layout consistency through responsive grid implementation and scalable UI structure.",
+    outcome: "Improved sponsor visibility and layout consistency through responsive grid implementation and scalable UI structure.",
 
-    performance:
-      "Optimized responsive rendering and adaptive spacing behavior across desktop, tablet, and mobile devices.",
+    performance: "Optimized responsive rendering and adaptive spacing behavior across desktop, tablet, and mobile devices.",
 
-    usability:
-      "Enhanced readability and sponsor presentation through balanced layouts and structured visual alignment.",
+    usability: "Enhanced readability and sponsor presentation through balanced layouts and structured visual alignment.",
 
     tech: [
       "React",
@@ -322,25 +314,25 @@ export const projects = [
         description:
           "Structured card alignment improving visual balance and responsive consistency.",
       },
+
     ],
   },
 
   {
     slug: "courses-interface",
 
+    cardImage: "/projects/courses-interface/courses-desktop.png",
+
     title: "Courses Interface with Dynamic Layout",
 
     shortDescription:
       "Responsive courses interface with adaptive tag positioning and scalable card-based content layouts.",
 
-    overview:
-      "A scalable courses interface developed with responsive layouts, adaptive tag positioning, and reusable card systems. The project focuses on structured content hierarchy and responsive presentation across multiple devices.",
+    overview: "A scalable courses interface developed with responsive layouts, adaptive tag positioning, and reusable card systems. The project focuses on structured content hierarchy and responsive presentation across multiple devices.",
 
-    problem:
-      "The interface required flexible content layouts capable of maintaining responsive consistency and adaptive spacing behavior for dynamic course data.",
+    problem: "The interface required flexible content layouts capable of maintaining responsive consistency and adaptive spacing behavior for dynamic course data.",
 
-    solution:
-      "Implemented reusable card systems, adaptive tag positioning logic, and scalable responsive layouts to improve content organization and browsing experience.",
+    solution: "Implemented reusable card systems, adaptive tag positioning logic, and scalable responsive layouts to improve content organization and browsing experience.",
 
     features: [
       "Dynamic course layouts",
@@ -351,14 +343,11 @@ export const projects = [
       "Scalable layout behavior",
     ],
 
-    outcome:
-      "Improved course content organization and responsive layout consistency across different screen sizes.",
+    outcome: "Improved course content organization and responsive layout consistency across different screen sizes.",
 
-    performance:
-      "Optimized rendering behavior and adaptive spacing logic for dynamic card-based layouts.",
+    performance: "Optimized rendering behavior and adaptive spacing logic for dynamic card-based layouts.",
 
-    usability:
-      "Enhanced readability and browsing experience through structured content presentation and balanced visual hierarchy.",
+    usability: "Enhanced readability and browsing experience through structured content presentation and balanced visual hierarchy.",
 
     tech: [
       "React",
