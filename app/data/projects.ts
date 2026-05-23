@@ -85,7 +85,7 @@ export const projects = [
   {
     slug: "authentication-interface",
 
-    cardImage: "/projects/authentication/auth-hero.png",
+    cardImage: "/projects/authentication/auth-project-hero.png",
 
     title: "Authentication Login Interface",
 
@@ -168,7 +168,7 @@ export const projects = [
   {
     slug: "interactive-virtual-tour",
 
-    cardImage: "/projects/virtual-tour/tour-hero.png",
+    cardImage: "/projects/virtual-tour/tour-project-hero.png",
 
     title: "Interactive Virtual Tour Experience",
 
@@ -205,7 +205,7 @@ export const projects = [
       "Component Architecture",
     ],
 
-    heroImage: "/projects/virtual-tour/virtual-hero.png",
+    heroImage: "/projects/virtual-tour/tour-hero.png",
 
     gallery: [
       {
@@ -281,7 +281,7 @@ export const projects = [
       "UI Development",
     ],
 
-    heroImage: "/projects/sponsors-showcase/sponsors-hero.png",
+    heroImage: "/projects/sponsors-showcase/desktop-top.png",
 
     gallery: [
       {
@@ -321,7 +321,7 @@ export const projects = [
   {
     slug: "courses-interface",
 
-    cardImage: "/projects/courses-interface/courses-hero.png",
+    cardImage: "/projects/courses-interface/courses-project-hero.png",
 
     title: "Courses Interface with Dynamic Layout",
 
