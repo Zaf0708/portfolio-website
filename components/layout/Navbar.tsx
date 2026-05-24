@@ -2,19 +2,50 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
 import Image from "next/image";
+import { Menu, X, ChevronDown } from "lucide-react";
 
-const links = ["home", "projects", "services", "contact"];
+const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "Expertise", href: "/#expertise" },
+  { label: "Services", href: "/#services" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Tech Stack", href: "/#tech-stack" },
+  { label: "About", href: "/#about" },
+  { label: "Contact", href: "/#contact" },
+];
+
+const caseStudies = [
+  {
+    label: "Team Directory API",
+    href: "/projects/team-directory-api",
+  },
+  {
+    label: "Authentication Login Interface",
+    href: "/projects/authentication-interface",
+  },
+  {
+    label: "Interactive Virtual Tour",
+    href: "/projects/interactive-virtual-tour",
+  },
+  {
+    label: "Sponsors Showcase",
+    href: "/projects/sponsors-showcase",
+  },
+  {
+    label: "Courses Interface",
+    href: "/projects/courses-interface",
+  },
+];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [active, setActive] = useState("home");
 
   const navRef = useRef<HTMLDivElement>(null);
 
-  // refs inside component
-  const linkRefs = useRef<Record<string, HTMLAnchorElement | null>>({});
+  const linkRefs = useRef<
+  Record<string, HTMLAnchorElement | HTMLButtonElement | null>
+  >({});
 
   const [underlineStyle, setUnderlineStyle] = useState({
     left: 0,
@@ -22,47 +53,24 @@ export default function Navbar() {
     opacity: 0,
   });
 
-  // Scroll Spy
+  // Default underline on Projects
   useEffect(() => {
-    const sections = document.querySelectorAll("section[id]");
+    const defaultItem = "Projects";
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries.find((e) => e.isIntersecting);
-        if (visible) {
-          setActive(visible.target.id);
-        }
-      },
-      {
-        threshold: 0.6,
-        rootMargin: "-80px 0px 0px 0px",
-      }
-    );
-
-    sections.forEach((section) => observer.observe(section));
-
-    return () => {
-      sections.forEach((section) => observer.unobserve(section));
-    };
-  }, []);
-
-  // Move underline (NO querySelector)
-  useEffect(() => {
-    const activeEl = linkRefs.current[active];
+    const activeEl = linkRefs.current[defaultItem];
     const parentRect = navRef.current?.getBoundingClientRect();
 
-    if (activeEl && parentRect) {
-      const rect = activeEl.getBoundingClientRect();
+    if (!activeEl || !parentRect) return;
 
-      setUnderlineStyle({
-        left: rect.left - parentRect.left,
-        width: rect.width,
-        opacity: 1,
-      });
-    }
-  }, [active]);
+    const rect = activeEl.getBoundingClientRect();
 
-  // Hover override
+    setUnderlineStyle({
+      left: rect.left - parentRect.left,
+      width: rect.width,
+      opacity: 1,
+    });
+  }, []);
+
   const handleMouseEnter = (item: string) => {
     const el = linkRefs.current[item];
     const parentRect = navRef.current?.getBoundingClientRect();
@@ -78,27 +86,15 @@ export default function Navbar() {
     });
   };
 
-  const handleMouseLeave = () => {
-    const activeEl = linkRefs.current[active];
-    const parentRect = navRef.current?.getBoundingClientRect();
-
-    if (!activeEl || !parentRect) return;
-
-    const rect = activeEl.getBoundingClientRect();
-
-    setUnderlineStyle({
-      left: rect.left - parentRect.left,
-      width: rect.width,
-      opacity: 1,
-    });
-  };
-
   return (
-    <header className="w-full bg-[var(--brand-dark)] text-[var(--brand-white)] sticky top-0 z-50">
+    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-[var(--brand-dark)]/95 backdrop-blur-md">
       <div className="max-w-[1200px] mx-auto flex items-center justify-between h-[72px] px-6 md:px-10">
 
         {/* Logo */}
-        <Link href="/" className="flex items-center">
+        <Link
+          href="/"
+          className="flex items-center shrink-0"
+        >
           <Image
             src="/logo.png"
             alt="Homepage"
@@ -109,37 +105,61 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* Desktop Nav */}
+        {/* Desktop Navigation */}
         <div
           ref={navRef}
-          onMouseLeave={handleMouseLeave}
-          className="relative hidden md:flex items-center gap-8 text-[14px] text-[var(--brand-border)]"
+          className="relative hidden lg:flex items-center gap-8 text-[14px]"
         >
-          {links.map((item) => {
-            const isActive = active === item;
+          {navLinks.map((item) => (
+            <Link
+              key={item.label}
+              ref={(el) => {
+                linkRefs.current[item.label] = el;
+              }}
+              href={item.href}
+              onMouseEnter={() => handleMouseEnter(item.label)}
+              className="relative text-[var(--brand-border)] transition-colors duration-300 hover:text-white"
+            >
+              {item.label}
+            </Link>
+          ))}
 
-            return (
-              <Link
-                key={item}
-                ref={(el) => {
-                  linkRefs.current[item] = el;
-                }}
-                href={item === "home" ? "/" : `#${item}`}
-                onMouseEnter={() => handleMouseEnter(item)}
-                className={`transition-colors duration-300 ${
-                  isActive
-                    ? "text-[var(--brand-white)]"
-                    : "hover:text-[var(--brand-white)]"
-                }`}
-              >
-                {item.charAt(0).toUpperCase() + item.slice(1)}
-              </Link>
-            );
-          })}
+          {/* Case Studies Dropdown */}
+          <div
+            className="relative group"
+            onMouseEnter={() => handleMouseEnter("Case Studies")}
+          >
+            <button
+              ref={(el) => {
+                linkRefs.current["Case Studies"] = el;
+              }}
+              className="flex items-center gap-1 text-[14px] text-[var(--brand-border)] transition-colors duration-300 hover:text-white"
+            >
+              Case Studies
+              <ChevronDown size={16} />
+            </button>
+
+            {/* Dropdown */}
+            <div className="absolute top-full left-0 pt-4 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300">
+              <div className="w-[320px] rounded-2xl border border-white/10 bg-[var(--brand-dark)] shadow-2xl p-3">
+
+                {caseStudies.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="block rounded-xl px-4 py-3 text-sm text-[var(--brand-border)] transition-all duration-300 hover:bg-white/5 hover:text-white"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+
+              </div>
+            </div>
+          </div>
 
           {/* Floating Underline */}
           <span
-            className="absolute bottom-0 h-[2px] bg-[var(--brand-white)] transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]"
+            className="absolute bottom-[-6px] h-[2px] bg-white transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]"
             style={{
               left: underlineStyle.left,
               width: underlineStyle.width,
@@ -148,37 +168,64 @@ export default function Navbar() {
           />
         </div>
 
-        {/* Mobile Button */}
+        {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2 text-[var(--brand-border)]"
+          className="lg:hidden p-2 text-[var(--brand-border)] hover:text-white transition"
           onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
+          aria-label="Toggle Menu"
         >
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Navigation */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ${
-          open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        className={`lg:hidden overflow-hidden transition-all duration-300 ${
+          open
+            ? "max-h-[900px] opacity-100"
+            : "max-h-0 opacity-0"
         }`}
       >
-        <nav className="px-6 pb-6 flex flex-col gap-5 text-[var(--brand-border)] bg-[var(--brand-dark)]">
-          {links.map((item) => (
-            <Link
-              key={item}
-              href={item === "home" ? "/" : `#${item}`}
-              onClick={() => setOpen(false)}
-              className={`text-base ${
-                active === item
-                  ? "text-[var(--brand-white)]"
-                  : "hover:text-[var(--brand-white)]"
-              }`}
-            >
-              {item.charAt(0).toUpperCase() + item.slice(1)}
-            </Link>
-          ))}
+        <nav className="px-6 pb-8 bg-[var(--brand-dark)] border-t border-white/10">
+
+          {/* Main Links */}
+          <div className="flex flex-col gap-5 pt-6">
+
+            {navLinks.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className="text-base text-[var(--brand-border)] transition-colors duration-300 hover:text-white"
+              >
+                {item.label}
+              </Link>
+            ))}
+
+          </div>
+
+          {/* Divider */}
+          <div className="w-full h-px bg-white/10 my-6" />
+
+          {/* Case Studies */}
+          <div className="flex flex-col gap-3">
+
+            <p className="text-xs uppercase tracking-[0.2em] text-[var(--brand-primary)]">
+              Case Studies
+            </p>
+
+            {caseStudies.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className="text-sm text-[var(--brand-border)] transition-colors duration-300 hover:text-white"
+              >
+                {item.label}
+              </Link>
+            ))}
+
+          </div>
         </nav>
       </div>
     </header>
