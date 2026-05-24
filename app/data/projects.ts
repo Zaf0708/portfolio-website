@@ -244,7 +244,7 @@ export const projects = [
   {
     slug: "sponsors-showcase",
 
-    cardImage: "/projects/sponsors-showcase/sponsors-hero.png",
+    cardImage: "/projects/sponsors-showcase/sponsors-project-hero.png",
 
     title: "Responsive Sponsors Showcase",
 
@@ -281,7 +281,7 @@ export const projects = [
       "UI Development",
     ],
 
-    heroImage: "/projects/sponsors-showcase/desktop-top.png",
+    heroImage: "/projects/sponsors-showcase/sponsors-hero.png",
 
     gallery: [
       {
