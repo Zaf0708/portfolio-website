@@ -8,7 +8,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="w-full bg-[var(--brand-white)]"
+      className="w-full bg-[var(--brand-white)] scroll-mt-24"
     >
       <div className="max-w-[1200px] mx-auto px-5 sm:px-6 md:px-10 py-16 sm:py-20 md:py-24">
 

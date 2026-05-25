@@ -133,5 +133,6 @@
   }
   html {
     @apply font-sans;
+    scroll-behavior: smooth;
   }
 }

@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function Expertise() {
   return (
-    <section id="expertise" className="w-full bg-[var(--brand-white)]">
+    <section id="expertise" className="w-full bg-[var(--brand-white)] scroll-mt-24">
       <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-20 md:py-24">
 
         {/* Section Title */}

@@ -5,7 +5,7 @@ import { projects } from "@/app/data/projects";
 
 export default function Projects() {
   return (
-    <section id="projects" className="w-full bg-[var(--brand-white)]">
+    <section id="projects" className="w-full bg-[var(--brand-white)] scroll-mt-24">
       <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-20 md:py-24">
 
         {/* Title */}

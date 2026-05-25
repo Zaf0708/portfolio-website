@@ -15,7 +15,7 @@ export default function Tech() {
   ];
 
   return (
-    <section id="tech" className="w-full bg-[var(--brand-white)]">
+    <section id="tech" className="w-full bg-[var(--brand-white)] scroll-mt-24">
       <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-20 md:py-24">
 
         <h2 className="text-2xl md:text-3xl font-semibold text-[var(--brand-dark)] mb-10">
