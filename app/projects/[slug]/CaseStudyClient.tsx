@@ -284,44 +284,65 @@ export default function CaseStudyClient({
           </section>
 
           {/* Navigation */}
-          <section className="w-full border-t border-[var(--brand-border)]">
-            <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-10 py-10">
+<section className="w-full border-t border-[var(--brand-border)] bg-[rgba(69,153,254,0.03)]">
+  <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-10 py-10 md:py-14">
 
-              <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 items-center">
 
-                <div className="w-full sm:w-auto">
-                  {previousProject && (
-                    <Link
-                      href={`/projects/${previousProject.slug}`}
-                      className="text-sm font-medium text-[var(--brand-primary)] hover:underline"
-                    >
-                      ← Previous Project
-                    </Link>
-                  )}
-                </div>
+      {/* Previous */}
+      <div className="flex justify-start">
+        {previousProject ? (
+          <Link
+            href={`/projects/${previousProject.slug}`}
+            className="group w-full md:w-auto rounded-2xl border border-[var(--brand-border)] bg-white px-5 py-4 transition-all duration-300 hover:border-[var(--brand-primary)] hover:shadow-md"
+          >
+            <p className="text-xs uppercase tracking-[0.18em] text-[var(--brand-primary)] mb-1">
+              Previous
+            </p>
 
-                <Link
-                  href="/#projects"
-                  className="text-sm font-medium text-[var(--brand-dark)] hover:text-[var(--brand-primary)] transition"
-                >
-                  Back to Projects
-                </Link>
+            <p className="text-sm md:text-base font-medium text-[var(--brand-dark)] transition group-hover:text-[var(--brand-primary)]">
+              ← {previousProject.title}
+            </p>
+          </Link>
+        ) : (
+          <div />
+        )}
+      </div>
 
-                <div className="w-full sm:w-auto text-right">
-                  {nextProject && (
-                    <Link
-                      href={`/projects/${nextProject.slug}`}
-                      className="text-sm font-medium text-[var(--brand-primary)] hover:underline"
-                    >
-                      Next Project →
-                    </Link>
-                  )}
-                </div>
+      {/* Center */}
+      <div className="flex justify-center">
+        <Link
+          href="/#projects"
+          className="inline-flex items-center justify-center rounded-full border border-[var(--brand-border)] bg-white px-6 py-3 text-sm font-medium text-[var(--brand-dark)] transition-all duration-300 hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)] hover:shadow-sm"
+        >
+          Back to Projects
+        </Link>
+      </div>
 
-              </div>
+      {/* Next */}
+      <div className="flex justify-end">
+        {nextProject ? (
+          <Link
+            href={`/projects/${nextProject.slug}`}
+            className="group w-full md:w-auto rounded-2xl border border-[var(--brand-border)] bg-white px-5 py-4 text-right transition-all duration-300 hover:border-[var(--brand-primary)] hover:shadow-md"
+          >
+            <p className="text-xs uppercase tracking-[0.18em] text-[var(--brand-primary)] mb-1">
+              Next
+            </p>
 
-            </div>
-          </section>
+            <p className="text-sm md:text-base font-medium text-[var(--brand-dark)] transition group-hover:text-[var(--brand-primary)]">
+              {nextProject.title} →
+            </p>
+          </Link>
+        ) : (
+          <div />
+        )}
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
         </main>
       <Footer />

@@ -7,7 +7,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="w-full bg-[rgba(69,153,254,0.03)]"
+      className="w-full bg-[rgba(69,153,254,0.03)] scroll-mt-24"
     >
       <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-20 md:py-24">
 
