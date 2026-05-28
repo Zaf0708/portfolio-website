@@ -1,100 +1,135 @@
 "use client";
 
+import Link from "next/link";
+import {
+  GitMerge as GithubIcon,
+  ExternalLink as LinkedinIcon,
+  Mail,
+} from "lucide-react";
+
+const navLinks = [
+  { label: "Expertise", href: "/#expertise" },
+  { label: "Services", href: "/#services" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Tech Stack", href: "/#tech" },
+  { label: "About", href: "/#about" },
+  { label: "Contact", href: "/#contact" },
+];
+
+const caseStudies = [
+  { label: "Team Directory API", href: "/projects/team-directory-api" },
+  { label: "Authentication Login Interface", href: "/projects/authentication-interface" },
+  { label: "Interactive Virtual Tour", href: "/projects/interactive-virtual-tour" },
+  { label: "Sponsors Showcase", href: "/projects/sponsors-showcase" },
+  { label: "Courses Interface", href: "/projects/courses-interface" },
+];
+
 export default function Footer() {
   return (
-    <footer className="w-full border-t border-[var(--brand-border)] bg-[var(--brand-white)]">
+    <footer className="w-full border-t border-white/10 bg-[var(--brand-dark)] text-white">
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-8 lg:px-10 py-12 sm:py-14 lg:py-16">
 
-      <div className="max-w-[1200px] mx-auto px-5 sm:px-6 md:px-10 py-6 sm:py-8">
+        {/* Top Layout — stacks on mobile, 2-col on tablet, 4-col on desktop */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-14">
 
-        {/* Main Footer Layout */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-5 md:gap-6">
-
-          {/* Left Side — Branding */}
-          <div className="text-center md:text-left">
-
-            <p className="text-sm md:text-base font-medium text-[var(--brand-dark)] mb-1">
+          {/* Brand — full width on mobile & tablet, 1 col on desktop */}
+          <div className="sm:col-span-2 lg:col-span-1">
+            <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 leading-snug">
               Mohammade Zafroollah Carrimbaccus
+            </h3>
+            <p className="text-sm leading-7 text-[var(--brand-border)] max-w-xs">
+              Front-End Developer focused on building modern, responsive, and
+              user-focused digital experiences using React, Next.js, and
+              TypeScript.
             </p>
-
-            <p className="text-xs sm:text-sm text-[var(--brand-text)]">
-              Front-End Developer • React • Next.js • TypeScript
-            </p>
-
           </div>
 
-          {/* Right Side — Navigation + Social */}
-          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-
-            {/* Navigation */}
-            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-5 text-sm">
-
-              <a
-                href="#about"
-                className="text-[var(--brand-text)] transition-all duration-300 hover:text-[var(--brand-primary)]"
+          {/* Navigation */}
+          <div>
+            <h4 className="text-sm font-semibold uppercase tracking-[0.18em] mb-4 sm:mb-5 text-[var(--brand-primary)]">
+              Navigation
+            </h4>
+            <nav className="flex flex-col gap-3">
+              <Link
+                href="/"
+                className="text-sm text-[var(--brand-border)] transition-colors duration-200 hover:text-white w-fit"
               >
-                About
-              </a>
+                Home
+              </Link>
+              {navLinks.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-sm text-[var(--brand-border)] transition-colors duration-200 hover:text-white w-fit"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
 
+          {/* Case Studies */}
+          <div>
+            <h4 className="text-sm font-semibold uppercase tracking-[0.18em] mb-4 sm:mb-5 text-[var(--brand-primary)]">
+              Case Studies
+            </h4>
+            <nav className="flex flex-col gap-3">
+              {caseStudies.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-sm text-[var(--brand-border)] transition-colors duration-200 hover:text-white w-fit"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+
+          {/* Connect */}
+          <div>
+            <h4 className="text-sm font-semibold uppercase tracking-[0.18em] mb-4 sm:mb-5 text-[var(--brand-primary)]">
+              Connect
+            </h4>
+            <div className="flex flex-col gap-4">
               <a
-                href="#projects"
-                className="text-[var(--brand-text)] transition-all duration-300 hover:text-[var(--brand-primary)]"
+                href="mailto:your@email.com"
+                className="flex items-center gap-3 text-sm text-[var(--brand-border)] transition-colors duration-200 hover:text-white w-fit"
               >
-                Projects
+                <Mail size={16} aria-hidden="true" />
+                Email
               </a>
-
-              <a
-                href="#services"
-                className="text-[var(--brand-text)] transition-all duration-300 hover:text-[var(--brand-primary)]"
-              >
-                Services
-              </a>
-
-              <a
-                href="#contact"
-                className="text-[var(--brand-text)] transition-all duration-300 hover:text-[var(--brand-primary)]"
-              >
-                Contact
-              </a>
-
-            </div>
-
-            {/* Divider Desktop */}
-            <div className="hidden sm:block w-px h-4 bg-[var(--brand-border)]" />
-
-            {/* Social Links */}
-            <div className="flex items-center gap-4 text-sm">
-
               <a
                 href="https://github.com/Zaf0708"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[var(--brand-text)] transition-all duration-300 hover:text-[var(--brand-primary)]"
+                className="flex items-center gap-3 text-sm text-[var(--brand-border)] transition-colors duration-200 hover:text-white w-fit"
               >
+                <GithubIcon size={16} aria-hidden="true" />
                 GitHub
               </a>
-
               <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[var(--brand-text)] transition-all duration-300 hover:text-[var(--brand-primary)]"
+                className="flex items-center gap-3 text-sm text-[var(--brand-border)] transition-colors duration-200 hover:text-white w-fit"
               >
+                <LinkedinIcon size={16} aria-hidden="true" />
                 LinkedIn
               </a>
-
             </div>
-
           </div>
 
         </div>
 
-        {/* Bottom Copyright */}
-        <div className="mt-6 pt-6 border-t border-[rgba(184,202,209,0.5)] text-center">
-
-          <p className="text-xs sm:text-sm text-[var(--brand-text)]">
-            © 2026 Zafroollah. All rights reserved.
+        {/* Divider + Bottom Bar */}
+        <div className="mt-12 sm:mt-14 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
+          <p className="text-sm text-[var(--brand-border)] text-center sm:text-left">
+            © 2026 Mohammade Zafroollah Carrimbaccus. All rights reserved.
           </p>
-
+          <p className="text-xs tracking-[0.16em] uppercase text-[var(--brand-border)]">
+            Designed &amp; Developed with Next.js
+          </p>
         </div>
 
       </div>
