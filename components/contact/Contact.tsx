@@ -1,10 +1,88 @@
 "use client";
 
+import { useState } from "react";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
 export default function Contact() {
+  const [loading, setLoading] = useState(false);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const [status, setStatus] = useState<{
+    type: "success" | "error" | "";
+    message: string;
+  }>({
+    type: "",
+    message: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (
+    e: React.FormEvent<HTMLFormElement>
+  ) => {
+    e.preventDefault();
+
+    setLoading(true);
+    setStatus({
+      type: "",
+      message: "",
+    });
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Something went wrong");
+      }
+
+      setStatus({
+        type: "success",
+        message: "Message sent successfully.",
+      });
+
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      setStatus({
+        type: "error",
+        message:
+          error instanceof Error
+            ? error.message
+            : "Failed to send message.",
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section
       id="contact"
@@ -47,7 +125,7 @@ export default function Contact() {
                   </p>
 
                   <a
-                    href="mailto:your@email.com"
+                    href="mailto:zafroollah@gmail.com"
                     className="text-sm md:text-base text-[var(--brand-primary)] break-all hover:underline"
                   >
                     zafroollah@gmail.com
@@ -61,8 +139,9 @@ export default function Contact() {
                   </p>
 
                   <a
-                    href="https://linkedin.com"
+                    href="https://linkedin.com/in/zafroollah-carrimbaccus"
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="text-sm md:text-base text-[var(--brand-primary)] break-all hover:underline"
                   >
                     linkedin.com/in/zafroollah-carrimbaccus
@@ -78,6 +157,7 @@ export default function Contact() {
                   <a
                     href="https://github.com/Zaf0708"
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="text-sm md:text-base text-[var(--brand-primary)] break-all hover:underline"
                   >
                     github.com/Zaf0708
@@ -102,7 +182,10 @@ export default function Contact() {
           {/* Right Side — Contact Form */}
           <div className="w-full lg:w-[62%]">
 
-            <form className="border border-[var(--brand-border)] rounded-xl p-5 sm:p-6 md:p-8 bg-[var(--brand-white)]">
+            <form
+              onSubmit={handleSubmit}
+              className="border border-[var(--brand-border)] rounded-xl p-5 sm:p-6 md:p-8 bg-[var(--brand-white)]"
+            >
 
               {/* Name */}
               <div className="mb-4 md:mb-5">
@@ -113,6 +196,10 @@ export default function Contact() {
 
                 <Input
                   type="text"
+                  name="name"
+                  required
+                  value={formData.name}
+                  onChange={handleChange}
                   placeholder="Your name"
                   className="h-11 md:h-12 text-sm md:text-base border-[var(--brand-border)] focus-visible:ring-0 focus-visible:border-[var(--brand-primary)]"
                 />
@@ -128,6 +215,10 @@ export default function Contact() {
 
                 <Input
                   type="email"
+                  name="email"
+                  required
+                  value={formData.email}
+                  onChange={handleChange}
                   placeholder="your@email.com"
                   className="h-11 md:h-12 text-sm md:text-base border-[var(--brand-border)] focus-visible:ring-0 focus-visible:border-[var(--brand-primary)]"
                 />
@@ -143,6 +234,10 @@ export default function Contact() {
 
                 <Input
                   type="text"
+                  name="subject"
+                  required
+                  value={formData.subject}
+                  onChange={handleChange}
                   placeholder="Project inquiry"
                   className="h-11 md:h-12 text-sm md:text-base border-[var(--brand-border)] focus-visible:ring-0 focus-visible:border-[var(--brand-primary)]"
                 />
@@ -158,18 +253,36 @@ export default function Contact() {
 
                 <Textarea
                   rows={6}
+                  name="message"
+                  required
+                  value={formData.message}
+                  onChange={handleChange}
                   placeholder="Tell me about your project..."
                   className="min-h-[140px] md:min-h-[160px] text-sm md:text-base border-[var(--brand-border)] resize-none focus-visible:ring-0 focus-visible:border-[var(--brand-primary)]"
                 />
 
               </div>
 
+              {/* Status Message */}
+              {status.message && (
+                <div
+                  className={`mb-5 text-sm ${
+                    status.type === "success"
+                      ? "text-green-600"
+                      : "text-red-500"
+                  }`}
+                >
+                  {status.message}
+                </div>
+              )}
+
               {/* Button */}
               <Button
                 type="submit"
-                className="w-full sm:w-auto h-11 md:h-12 px-6 md:px-8 text-sm md:text-base bg-[var(--brand-primary)] hover:bg-[#2F7FE0] text-white"
+                disabled={loading}
+                className="w-full sm:w-auto h-11 md:h-12 px-6 md:px-8 text-sm md:text-base bg-[var(--brand-primary)] hover:bg-[#2F7FE0] text-white disabled:opacity-70"
               >
-                Send Message
+                {loading ? "Sending..." : "Send Message"}
               </Button>
 
             </form>
