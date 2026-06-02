@@ -183,12 +183,15 @@ export default function CaseStudyClient({
                         setOpen(true);
                       }}
                       className="relative w-full h-[220px] sm:h-[260px] md:h-[320px] lg:h-[360px] overflow-hidden"
-                    >
+                      >
 
                       <Image
                         src={item.image}
                         alt={item.title}
                         fill
+                        sizes="(max-width: 768px) 100vw,
+                        (max-width: 1024px) 50vw,
+                        600px"
                         className="object-cover object-top transition-transform duration-500 hover:scale-105"
                       />
 
