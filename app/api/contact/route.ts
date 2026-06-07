@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { supabase } from "@/lib/supabase";
+import { supabaseServer } from "@/lib/supabase-server";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -25,7 +25,7 @@ export async function POST(req: Request) {
       );
     }
 
-    const { error } = await supabase
+    const { error } = await supabaseServer
       .from("messages")
       .insert([{ ...validated }]);
 
@@ -42,7 +42,7 @@ export async function POST(req: Request) {
     await resend.emails.send({
       from: "Portfolio Contact <onboarding@resend.dev>",
       to: receiverEmail,
-      subject: `Portfolio Inquiry • ${validated.subject}`,
+      subject: `New Portfolio Project Inquiry • ${validated.subject}`,
       html: `
         <!DOCTYPE html>
         <html>
@@ -56,7 +56,7 @@ export async function POST(req: Request) {
           style="
             margin:0;
             padding:0;
-            background:#f5f7fa;
+            background:#F8FAFC;
             font-family:Arial,sans-serif;
           "
         >
@@ -74,14 +74,14 @@ export async function POST(req: Request) {
             background:#ffffff;
             border-radius:12px;
             overflow:hidden;
-            border:1px solid #e5e7eb;
+            border:1px solid #B8CAD1;
           "
         >
 
         <tr>
         <td
           style="
-            background:#111827;
+            background:#031E49;
             padding:32px;
             color:#ffffff;
           "
@@ -100,6 +100,19 @@ export async function POST(req: Request) {
             A new enquiry has been submitted through your portfolio website.
           </p>
         </td>
+        </tr>
+
+        <tr>
+          <td
+            style="
+              height:4px;
+              background:#4599FE;
+              line-height:4px;
+              font-size:0;
+            "
+          >
+            &nbsp;
+          </td>
         </tr>
 
         <tr>
@@ -135,6 +148,25 @@ export async function POST(req: Request) {
         </td>
         </tr>
 
+        <tr>
+          <td style="padding-top:24px;">
+            <a
+              href="mailto:${validated.email}"
+              style="
+                display:inline-block;
+                background:#4599FE;
+                color:#ffffff;
+                text-decoration:none;
+                padding:12px 20px;
+                border-radius:8px;
+                font-weight:600;
+              "
+            >
+              Reply to ${validated.name}
+            </a>
+          </td>
+        </tr>
+
         </table>
 
         </td>
@@ -144,13 +176,13 @@ export async function POST(req: Request) {
         <td
           style="
             padding:24px 32px;
-            background:#f9fafb;
-            border-top:1px solid #e5e7eb;
+            background:#F8FAFC;
+            border-top:1px solid #B8CAD1;
             color:#6b7280;
             font-size:13px;
           "
         >
-          Sent from your portfolio website contact form.
+          This message was submitted through the Zafroollah Carrimbaccus Portfolio website contact form.
         </td>
         </tr>
 
