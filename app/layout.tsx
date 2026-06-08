@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 
@@ -25,6 +26,7 @@ export default function RootLayout({
     >
       <body className="bg-[var(--brand-white)] text-[var(--brand-text)] antialiased font-sans">
         {children}
+        <Analytics />
       </body>
     </html>
   );
