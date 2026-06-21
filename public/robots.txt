@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://zafroollah.is-a.dev
+
+# Sitemaps
+Sitemap: https://zafroollah.is-a.dev/sitemap.xml
