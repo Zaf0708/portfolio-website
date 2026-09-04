@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "Mohammade Zafroollah Carrimbaccus | Front-End Developer",
 
   description:
-    "Front-End Developer specialising in React, Next.js, TypeScript and modern web applications. Explore professional case studies, responsive interfaces and production-ready solutions.",
+    "Front-End Developer specialising in React, Next.js and TypeScript. Explore responsive interfaces, case studies and production-ready web applications.",
 
   keywords: [
     "Front-End Developer",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     title: "Mohammade Zafroollah Carrimbaccus | Front-End Developer",
     description:
-      "Front-End Developer specialising in React, Next.js and TypeScript. Explore responsive interfaces, professional case studies and production-ready web applications.",
+      "Front-End Developer specialising in React, Next.js and TypeScript. Explore responsive interfaces, case studies and production-ready web applications.",
     siteName: "Zafroollah Carrimbaccus — Front-End Developer",
     images: [
       {
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Mohammade Zafroollah Carrimbaccus | Front-End Developer",
     description:
-      "Front-End Developer specialising in React, Next.js, TypeScript and modern web applications.",
+      "Front-End Developer specialising in React, Next.js and TypeScript. Explore responsive interfaces, case studies and production-ready web applications.",
     images: ["/og-image.webp"],
   },
 
