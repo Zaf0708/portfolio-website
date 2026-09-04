@@ -45,11 +45,11 @@ export const metadata: Metadata = {
     url: siteUrl,
     title: "Mohammade Zafroollah Carrimbaccus | Front-End Developer",
     description:
-      "Front-End Developer specialising in React, Next.js, TypeScript and modern web applications. Explore professional case studies, responsive interfaces and production-ready solutions.",
+      "Front-End Developer specialising in React, Next.js and TypeScript. Explore responsive interfaces, professional case studies and production-ready web applications.",
     siteName: "Zafroollah Carrimbaccus — Front-End Developer",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.webp",
         width: 1200,
         height: 630,
         alt: "Mohammade Zafroollah Carrimbaccus — Front-End Developer",
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     title: "Mohammade Zafroollah Carrimbaccus | Front-End Developer",
     description:
       "Front-End Developer specialising in React, Next.js, TypeScript and modern web applications.",
-    images: ["/og-image.png"],
+    images: ["/og-image.webp"],
   },
 
   robots: {
