@@ -8,28 +8,28 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://zafroollah.is-a.dev"),
+const siteUrl = "https://zafroollah.is-a.dev";
 
-  title: {
-    default: "Mohammade Zafroollah Carrimbaccus | Front-End Developer",
-    template: "%s | Mohammade Zafroollah Carrimbaccus",
-  },
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+
+  title: "Mohammade Zafroollah Carrimbaccus | Front-End Developer",
 
   description:
-    "Front-End Developer specialising in React, Next.js, TypeScript and modern web applications. Explore professional case studies, responsive interfaces and production-ready solutions.",
+    "Front-End Developer specialising in React, Next.js and TypeScript. Explore responsive interfaces, case studies and production-ready web applications.",
 
   keywords: [
     "Front-End Developer",
+    "Frontend Developer",
     "React Developer",
     "Next.js Developer",
     "TypeScript Developer",
-    "JavaScript Developer",
-    "Web Developer Australia",
-    "Portfolio",
-    "UI Developer",
-    "Responsive Web Design",
-    "Case Studies",
+    "Web Developer",
+    "Responsive Web Development",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Tailwind CSS",
   ],
 
   authors: [
@@ -40,43 +40,35 @@ export const metadata: Metadata = {
 
   creator: "Mohammade Zafroollah Carrimbaccus",
 
-  robots: {
-    index: true,
-    follow: true,
-  },
-
   openGraph: {
+    type: "website",
+    url: siteUrl,
     title: "Mohammade Zafroollah Carrimbaccus | Front-End Developer",
-
     description:
-      "Professional portfolio showcasing React, Next.js and TypeScript projects, case studies and modern front-end development solutions.",
-
-    url: "https://zafroollah.is-a.dev",
-
-    siteName: "Zafroollah Portfolio",
-
+      "Front-End Developer specialising in React, Next.js and TypeScript. Explore responsive interfaces, case studies and production-ready web applications.",
+    siteName: "Zafroollah Carrimbaccus — Front-End Developer",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.webp",
         width: 1200,
         height: 630,
-        alt: "Mohammade Zafroollah Carrimbaccus Portfolio",
+        alt: "Mohammade Zafroollah Carrimbaccus — Front-End Developer",
       },
     ],
-
     locale: "en_AU",
-    type: "website",
   },
 
   twitter: {
     card: "summary_large_image",
-
     title: "Mohammade Zafroollah Carrimbaccus | Front-End Developer",
-
     description:
-      "Professional portfolio showcasing React, Next.js and TypeScript projects, case studies and modern front-end development solutions.",
+      "Front-End Developer specialising in React, Next.js and TypeScript. Explore responsive interfaces, case studies and production-ready web applications.",
+    images: ["/og-image.webp"],
+  },
 
-    images: ["/og-image.png"],
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
