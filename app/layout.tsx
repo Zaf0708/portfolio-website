@@ -11,10 +11,10 @@ const inter = Inter({
 const siteUrl = "https://zafroollah.is-a.dev";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
   verification: {
     google:"google-site-verification: google1b795af9d77aedb0.html",
     },
+  metadataBase: new URL(siteUrl),
 
   title: "Mohammade Zafroollah Carrimbaccus | Front-End Developer",
 
