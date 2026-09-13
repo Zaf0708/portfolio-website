@@ -12,6 +12,9 @@ const siteUrl = "https://zafroollah.is-a.dev";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  verification: {
+    google:"google-site-verification: google1b795af9d77aedb0.html",
+    },
 
   title: "Mohammade Zafroollah Carrimbaccus | Front-End Developer",
 
